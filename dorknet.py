@@ -64,7 +64,7 @@ else:
 
 
 
-print "\nWould you like DorkNet to proxy it's connection to the search engine?"
+print "\nWould you like DorkNet to proxy its connection to the search engine?"
 query = raw_input("[Y]es/[N]o: ")
 
 if query == 'y':
