@@ -110,8 +110,8 @@ def search():
 			if args.verbose == True:
 				print "An error was raised with the following error message: "
 				print "\n %s" % e
-				break
-				sys.exit(0)
+			break
+			sys.exit(0)
 			
 		assert "Google" in driver.title
 		for items in dork_list:
