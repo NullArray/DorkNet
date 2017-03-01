@@ -37,7 +37,7 @@ parser = argparse.ArgumentParser(description="Use this script and dorks to find 
 group = parser.add_mutually_exclusive_group()
 group.add_argument("-d", "--dork", help="		specify the dork you wish to use\n")
 group.add_argument("-l", "--list", help="		specify path to list with dorks\n")
-parser.add_argument("-v", "--verbose", action="store_true", help="		toggle verbosity\n")
+parser.add_argument("-v", "--verbose", action="store_true", help="	toggle verbosity\n")
 args = parser.parse_args()
 
 dork_list = []
@@ -151,8 +151,7 @@ with open("results.log", "w") as outfile:
 	for item in proc_one:
 		outfile.write("%s\n" % item)
 		
-with open("results.log"
-, "r") as infile:
+with open("results.log", "r") as infile:
 	for line in infile:
 		print "\n[~]" + line
 		
