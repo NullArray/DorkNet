@@ -3,6 +3,9 @@ Selenium powered Python script to automate searching the web for vulnerable appl
 
 DorkNet can take a single dork or a list of dorks as arguments. After the proper command line arguments have been passed, the script will use Selenium and Geckodriver to find the results we want and save them to a textfile for further processing with SQLmap or similar utilities.
 
+### Note
+I have included the ability to proxy the connection of the web driver if desired. Simply provide the proxy IP and PORT when the dialog comes up.
+
 ## Usage
 
 ```
@@ -31,8 +34,11 @@ DorkNet.py -l /path/to/list.txr --verbose
 ### Dependencies
 
 You will need the Mozilla Geckodriver for this to work. - [Geckodriver](https://github.com/mozilla/geckodriver/releases)
+
 And Selenium, which you can either get here [Selenium on PyPi](https://pypi.python.org/pypi/selenium/2.7.0) or you can just open up your terminal and type the followig.
 
 ``
-pip install -U selenium
+pip install selenium
 ``
+### Known Issue
+On limited occasions, Google throws a captcha. The same sometimes happens when manually searching for strings that look like dorks. When this happens, you can just fill out the captcha in the Geckodriver and DorkNet will continue it's normal operation.
