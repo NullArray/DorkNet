@@ -106,10 +106,12 @@ def search():
 		try:
 			driver.get("http://google.com")
 		except Exception as e:
-			print "\nA connection could not be established"
+			print "\n[!]A connection could not be established"
 			if args.verbose == True:
 				print "An error was raised with the following error message: "
 				print "\n %s" % e
+				break
+				sys.exit(0)
 			
 		assert "Google" in driver.title
 		for items in dork_list:
