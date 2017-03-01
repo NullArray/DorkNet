@@ -153,9 +153,10 @@ with open("results.log", "w") as outfile:
 	for item in proc_one:
 		outfile.write("%s\n" % item)
 		
-with open("results.log", "r") as infile:
-	for line in infile:
-		print "\n[~]" + line
+if args.verbose == True:	
+	with open("results.log", "r") as infile:
+		for line in infile:
+			print "\n[~]" + line
 		
 
 print "\n\nDone. Results have been saved to a textfile, in the current directory as %s for further processing." % outfile
