@@ -72,7 +72,7 @@ if query == 'y':
 	PORT = raw_input("\nPlease enter the proxy port: ")
 	set_proxy = True
 elif query == 'n':
-	print "\nEstablishing unproxied connection..."
+	print "\n[+]Establishing unproxied connection..."
 	set_proxy = False
 else:
 	print "\n[!]Unhandled option, defaulting to unproxied connection..."
@@ -82,9 +82,9 @@ else:
 # Web Driver Proxy
 def proxy(PROXY_HOST,PROXY_PORT):
 	fp = webdriver.FirefoxProfile()
-	print "Proxy host set to: " + PROXY_HOST
-	print "Proxy port set to: " + PROXY_PORT
-	print "\nEstablishing connection..."
+	print "[+]Proxy host set to: " + PROXY_HOST
+	print "[+]Proxy port set to: " + PROXY_PORT
+	print "\n[+]Establishing connection..."
 	fp.set_preference("network.proxy.type", 1)
 	fp.set_preference("network.proxy.http",PROXY_HOST)
 	fp.set_preference("network.proxy.http_port",int(PROXY_PORT))
