@@ -35,7 +35,7 @@ DorkNet.py -l /path/to/list.txr --verbose
 
 You will need the Mozilla [Geckodriver](https://github.com/mozilla/geckodriver/releases) for this to work.
 
-And Selenium, which you can either be gotten here at [Selenium on PyPi](https://pypi.python.org/pypi/selenium/2.7.0) or you can just open up your terminal and type the followig.
+And Selenium, which you can get here at [Selenium on PyPi](https://pypi.python.org/pypi/selenium/2.7.0) or you can just open up your terminal and type the following.
 
 ``
 pip install selenium
