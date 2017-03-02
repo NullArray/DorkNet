@@ -28,7 +28,7 @@ Some examples for clarity.
 ```
 DorkNet.py -h
 DorkNet.py -d inurl:show.php?id= -v
-DorkNet.py -l /path/to/list.txr --verbose
+DorkNet.py -l /path/to/list.txt --verbose
 ```
 
 ### Dependencies
