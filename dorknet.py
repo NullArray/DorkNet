@@ -111,6 +111,7 @@ def search():
 				print "An error was raised with the following error message: "
 				print "\n %s" % e
 			break
+			driver.quit()
 			sys.exit(0)
 			
 		assert "Google" in driver.title
