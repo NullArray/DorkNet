@@ -132,7 +132,7 @@ def search():
 					print "An error was raised with the following error message: "
 					print "\n %s" % e
 				
-				time.sleep(1)
+				time.sleep(1.3)
 				continue	
 				
 				
