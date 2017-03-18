@@ -157,7 +157,7 @@ with open("results.log", "w") as outfile:
 if args.verbose == True:	
 	with open("results.log", "r") as infile:
 		for line in infile:
-			print "\n[~]" + line
+			print "[~]" + line
 		
 
 print "\n\nDone. Results have been saved to a textfile, in the current directory as %s for further processing." % outfile
