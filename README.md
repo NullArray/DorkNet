@@ -35,10 +35,11 @@ DorkNet.py -l /path/to/list.txt --verbose
 
 You will need the Mozilla [Geckodriver](https://github.com/mozilla/geckodriver/releases) for this to work.
 
-And Selenium, which you can get here at [Selenium on PyPi](https://pypi.python.org/pypi/selenium/2.7.0) or you can just open up your terminal and type the following.
+Selenium, which you can get here at [Selenium on PyPi](https://pypi.python.org/pypi/selenium/2.7.0) and the blessings lib just open up your terminal and type the following.
 
 ``
 pip install selenium
+pip install blessings
 ``
 ### Known Issue
 On limited occasions, Google throws a captcha. The same sometimes happens when manually searching for strings that look like dorks. When this happens, you can just fill out the captcha in the Geckodriver and DorkNet will continue it's normal operation.
