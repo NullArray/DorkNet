@@ -1,0 +1,2 @@
+selenium ; python_version < '2.7'
+blessings ; python_version < '2.7'
