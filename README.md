@@ -39,6 +39,7 @@ Selenium, which you can get here at [Selenium on PyPi](https://pypi.python.org/p
 
 ``
 pip install selenium
+
 pip install blessings
 ``
 ### Known Issue
