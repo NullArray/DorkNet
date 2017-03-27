@@ -142,7 +142,6 @@ def search():
 				
 			assert "No results found" not in driver.page_source
 			if "No results found." in driver.page_source:
-				driver.quit()
 				continue
 
 			links = driver.find_elements_by_xpath("//h3//a[@href]")
