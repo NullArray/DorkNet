@@ -153,7 +153,7 @@ def search():
 
 proc_one = search()
 
-with open("results.log", "w") as outfile:
+with open("results.log", "ab") as outfile:
 	for item in proc_one:
 		outfile.write("%s\n" % item)
 
