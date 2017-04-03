@@ -38,4 +38,4 @@ You will need the Mozilla [Geckodriver](https://github.com/mozilla/geckodriver/r
 ```pip install -r requirements.txt```
 
 ### Known Issue
-On limited occasions, Google throws a captcha. The same sometimes happens when manually searching for strings that look like dorks. When this happens, you can just fill out the captcha in the Geckodriver and DorkNet will continue it's normal operation.
+By using Selenium and Geckodriver, DorkNet is effective at emulating a regular browser. In this manner the program is able to avoid captchas. However on limited occasions, Google throws one regardless. The same sometimes happens when manually searching for strings that look like dorks. When this happens, you can just fill out the captcha in the Geckodriver and DorkNet will continue it's normal operation.
