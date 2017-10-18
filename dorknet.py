@@ -124,10 +124,10 @@ def search():
 			elem.clear()
 			elem.send_keys(items)
 			elem.send_keys(Keys.RETURN)
-			time.sleep(1.5)
+			time.sleep(2.2)
 			
 			try:
-				WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CLASS_NAME, "r")))
+				WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.CLASS_NAME, "r")))
 			except Exception as e:
 				driver.quit()
 				print "\n[" + t.red("!") + "]Detecting page source elements failed/timed out.\n"
