@@ -38,7 +38,7 @@ You will need the Mozilla [Geckodriver](https://github.com/mozilla/geckodriver/r
 
 ### Note
 
-DorkNet is featured in the [BlackArch Linux](https://blackarch.org) PenTesting Distro under WebApp Tools & Automation. As such it comes as a pre-installed with the distro. Reference the relevant [PKGBUILD](https://github.com/BlackArch/blackarch/blob/master/packages/dorknet/PKGBUILD) file in it's respective repo for details.
+DorkNet is featured in the [BlackArch Linux](https://blackarch.org) PenTesting Distro under WebApp Tools & Automation. As such it comes pre-installed with the distro. Reference the relevant [PKGBUILD](https://github.com/BlackArch/blackarch/blob/master/packages/dorknet/PKGBUILD) file in it's respective repo for details.
 
 
 ### Known Issue
