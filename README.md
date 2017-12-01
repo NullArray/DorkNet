@@ -30,7 +30,7 @@ DorkNet.py -l /path/to/list.txt --verbose
 
 **Proxifying**
 
-I have included the ability to proxy the connection of the web driver if desired. Simply provide the proxy IP and PORT when the dialog comes up and teh search engine will be accessed via the proxy settings you have provided. 
+I have included the ability to proxy the connection of the web driver if desired. Simply provide the proxy IP and PORT when the dialog comes up and the search engine will be accessed via the proxy settings you have provided. 
 
 
 ### Dependencies
