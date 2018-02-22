@@ -69,7 +69,7 @@ else:
 
 
 print "\n[" + t.green("+") + "]Would you like DorkNet to proxy it's connection to the search engine?"
-query = raw_input("[Y]es/[N]o: ")
+query = raw_input("[Y]es/[N]o: ").lower()
 
 if query == 'y':
 	IP = raw_input("\n[" + t.green("+") + "]Please enter the proxy host IP: ")
