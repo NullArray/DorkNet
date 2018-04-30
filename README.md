@@ -43,6 +43,7 @@ To use it, navigate to the DorkNet directory and make the shell script executabl
 cd DorkNet
 chmod +x gecko-setup.sh
 
+# Execute the shell script with the below command.
 sudo ./gecko-setup.sh
 ```
 The shell script has an option to automatically install the rest of the dependencies as well, via the requirements file, by invoking the following commands.
