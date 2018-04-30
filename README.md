@@ -35,9 +35,19 @@ I have included the ability to proxy the connection of the web driver if desired
 
 ### Dependencies
 
-You will need the Mozilla [Geckodriver](https://github.com/mozilla/geckodriver/releases) for this to work. After it has been installed feel free to use the requirements file i made for this program
+You will need the Mozilla [Geckodriver](https://github.com/mozilla/geckodriver/releases) for this to work. You can install it manually. However i've added a shell script to automate the process if you'd prefer.
 
-```pip install -r requirements.txt```
+To use it, navigate to the DorkNet directory and make the shell script executable like so.
+
+```
+cd DorkNet
+chmod +x gecko-setup.sh
+
+sudo ./gecko-setup.sh
+```
+The shell script has an option to automatically install the rest of the dependencies as well, via the requirements file, by invoking the following commands.
+
+```sudo -H pip install -r requirements.txt```
 
 ### Note
 
