@@ -47,7 +47,8 @@ function get_gdriver()
 		mv geckodriver /usr/sbin 
 		sudo ln -s /usr/sbin/geckodriver /usr/bin/geckodriver
 		notification "Geckodriver has been succesfully installed."
-	}
+	fi
+}
 
 
 if [[ "$EUID" -ne 0 ]]; then
