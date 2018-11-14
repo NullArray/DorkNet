@@ -127,7 +127,7 @@ def search():
 			time.sleep(2.2)
 			
 			try:
-				WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.CLASS_NAME, "r")))
+				WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.CLASS_NAME, "r"))) #r
 			except Exception as e:
 				driver.quit()
 				print "\n[" + t.red("!") + "]Detecting page source elements failed/timed out.\n"
@@ -144,23 +144,31 @@ def search():
 			if "No results found" in driver.page_source:
 				continue
 
-			links = driver.find_elements_by_xpath("//h3//a[@href]")
+			links = driver.find_elements_by_xpath("//div[@data-hveid]/div/div/a[@onmousedown]") # //h3//a[@href]			
 			for elem in links:
-				link_list.append(elem.get_attribute("href"))
+				link_list.append(elem.get_attribute("href")) # href elem.get_attribute("href")
+				
+			
             
 	driver.quit()
+	for url in link_list:
+		if url.endswith("search"):
+			link_list.remove(url)
 	return link_list
 
 proc_one = search()
 
 with open("results.log", "ab") as outfile:
 	for item in proc_one:
-		outfile.write("%s\n" % item)
+		outfile.write("\n" + item)
+	
+	outfile.close()
 
 if args.verbose == True:	
 	with open("results.log", "r") as infile:
 		for line in infile:
 			print "[" + t.magenta("~") + "]" + line
 		
+		outfile.close()
 
 print "\n\n[" + t.green("+") + "]Done. Results have been saved to a textfile, in the current directory as %s for further processing.\n" % outfile
