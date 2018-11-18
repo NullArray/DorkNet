@@ -113,8 +113,8 @@ def search():
 		# The way in which i configure the proxy, if the user chose
 		# to employ one
 		driver = proxy(IP, PORT)
-	elif args.nogui == True:
-		driver = webdriver.Firefox(firefox_options=options)
+	#elif args.nogui == True:
+	#	driver = webdriver.Firefox(firefox_options=options)
 	else:
 		driver = webdriver.Firefox()
     
