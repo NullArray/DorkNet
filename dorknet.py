@@ -41,10 +41,17 @@ parser = argparse.ArgumentParser(description="Use this script and dorks to find 
 group = parser.add_mutually_exclusive_group()
 group.add_argument("-d", "--dork", help="		specify the dork you wish to use\n")
 group.add_argument("-l", "--list", help="		specify path to list with dorks\n")
-parser.add_argument("-v", "--verbose", action="store_true", help="		toggle verbosity\n")
+#parser.add_argument("-n", "--nogui", action="store_true", default=False, help="run headless without a GUI")
+parser.add_argument("-v", "--verbose", action="store_true", default=False, help="toggle verbosity\n")
 args = parser.parse_args()
 
 dork_list = []
+
+# Doesn't jive with proxy settings
+#if args.nogui == True:
+#	options = webdriver.FirefoxOptions()
+#	options.add_argument("--headless")
+	
 
 # Dork list processing
 if args.list:
@@ -102,7 +109,12 @@ def search():
 	link_list = []
 	
 	if set_proxy == True:
+		# the --nogui option doesn't seem to want to play nice with
+		# The way in which i configure the proxy, if the user chose
+		# to employ one
 		driver = proxy(IP, PORT)
+	elif args.nogui == True:
+		driver = webdriver.Firefox(firefox_options=options)
 	else:
 		driver = webdriver.Firefox()
     
@@ -117,36 +129,45 @@ def search():
 				break
 				driver.quit()
 				sys.exit(0)
-			
-		assert "Google" in driver.title
+		
+		#if args.nogui == True:	
+		#	for items in dork_list:
+		#		elem = driver.find_element_by_name("q")
+		#		elem.clear()
+		#		elem.send_keys(items)
+		#		elem.send_keys(Keys.RETURN)
+		#		time.sleep(2.2)
+		#	
+		#else:
+		assert "Google" in driver.title	
 		for items in dork_list:
 			elem = driver.find_element_by_name("q")
 			elem.clear()
 			elem.send_keys(items)
 			elem.send_keys(Keys.RETURN)
 			time.sleep(2.2)
-			
-			try:
-				WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.CLASS_NAME, "r"))) #r
-			except Exception as e:
-				driver.quit()
-				print "\n[" + t.red("!") + "]Detecting page source elements failed/timed out.\n"
+		try:
+			WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.CLASS_NAME, "r"))) #r
+		except Exception as e:
+			driver.quit()
+			print "\n[" + t.red("!") + "]Detecting page source elements failed/timed out.\n"
 				
-				if args.verbose == True:
-					print "An error was raised with the following error message: "
-					print "\n %s" % (e)
+			if args.verbose == True:
+				print "An error was raised with the following error message: "
+				print "\n %s" % (e)
 				
-				time.sleep(1)
-				continue	
+			time.sleep(1)
+			continue	
 				
 				
-			assert "No results found" not in driver.page_source
-			if "No results found" in driver.page_source:
-				continue
+		assert "No results found" not in driver.page_source
+		if "No results found" in driver.page_source:
+			continue
 
-			links = driver.find_elements_by_xpath("//div[@data-hveid]/div/div/a[@onmousedown]") # //h3//a[@href]			
-			for elem in links:
-				link_list.append(elem.get_attribute("href")) # href elem.get_attribute("href")
+		links = driver.find_elements_by_xpath("//div[@data-hveid]/div/div/a[@onmousedown]") # //h3//a[@href]
+			
+		for elem in links:
+			link_list.append(elem.get_attribute("href")) # href elem.get_attribute("href")
 				
 			
             
