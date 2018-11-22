@@ -56,7 +56,7 @@ I've added some logic that lets the user run Geckodriver in `Headless Mode`, tha
 
 However, users that would like to run the program in headless mode anyway, can. I've committed all the relevant code to the repo. For the tme being it's just been commented out. Remove the comments and it should work without issue. Check out the commit historry [here](https://github.com/NullArray/DorkNet/commit/82977901b8dd94f2ec1f10f3a39762561b1a3302) to see the affected lines.
 
-Now if you _really_ want to proxy your connection while `--nogui` is st, you can start DorkNet with [ProxyChains](https://github.com/haad/proxychains) like so; 
+Now if you _really_ want to proxy your connection while `--nogui` is set, you can start DorkNet with [ProxyChains](https://github.com/haad/proxychains) like so; 
 
 ```proxychains python dorknet.py -l /path/to/dorks.list --nogui --verbose```
 
