@@ -52,15 +52,15 @@ The shell script has an option to automatically install the rest of the dependen
 
 ### Beta Update
 
-I've added some logic that lets the user run Geckodriver in `Headless Mode`, that is to say, without the traditional UI. This is especially useful if you have a particularly long list of dorks you'd like to work with. In it's current implementation, the function that is responsible for proxyfying our connection to Google interferes with the operations required to set the Geckodriver options to headless mode. Therefore, running DorkNet with the `--nogui` flag and a proxy enabled will not work as it is supposed to.
+I've added some logic that lets the user run Geckodriver in `Headless Mode`, that is to say, without the traditional UI. This is useful if you have a particularly long list of dorks you'd like to work with. In it's current implementation, the function that is responsible for proxyfying our connection to Google interferes with the operations required to set the Geckodriver options to enable headless mode. Therefore, running DorkNet with the `--nogui` flag and a proxy enabled will not work as it is supposed to.
 
 However, users that would like to run the program in headless mode anyway, can. I've committed all the relevant code to the repo. For the tme being it's just been commented out. Remove the comments and it should work without issue. Check out the commit historry [here](https://github.com/NullArray/DorkNet/commit/82977901b8dd94f2ec1f10f3a39762561b1a3302) to see the affected lines.
 
-Now if you _really_ want to proxy your connection, you can start DorkNet with [ProxyChains](https://github.com/haad/proxychains) like so; 
+Now if you _really_ want to proxy your connection while `--nogui` is st, you can start DorkNet with [ProxyChains](https://github.com/haad/proxychains) like so; 
 
 ```proxychains python dorknet.py -l /path/to/dorks.list --nogui --verbose```
 
-If you don't have Proxychains simply follow the link above or use your package manager to install it. Thank you.
+If you don't have ProxyChains simply follow the link above or use your package manager to install it. Thank you.
 
 ### Note
 
