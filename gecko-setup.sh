@@ -29,9 +29,9 @@ function get_gdriver()
 		notification "x86_64 architecture detected..."
 		sleep 1
 
-		wget https://github.com/mozilla/geckodriver/releases/download/v0.24.0/geckodriver-v0.24.0-linux64.tar.gz
-		tar -xvf geckodriver-v0.24.0-linux64.tar.gz
-		rm geckodriver-v0.24.0-linux64.tar.gz
+		wget https://github.com/mozilla/geckodriver/releases/download/v0.26.0/geckodriver-v0.26.0-linux64.tar.gz
+		tar -xvf geckodriver-v0.26.0-linux64.tar.gz
+		rm geckodriver-v0.26.0-linux64.tar.gz
 		chmod +x geckodriver
 		mv geckodriver /usr/sbin
 		sudo ln -s /usr/sbin/geckodriver /usr/bin/geckodriver
@@ -40,9 +40,9 @@ function get_gdriver()
 	else
 		notification "x32 architecture detected..."
 		sleep 1
-		wget https://github.com/mozilla/geckodriver/releases/download/v0.24.0/geckodriver-v0.24.0-linux32.tar.gz
-		tar -xvf geckodriver-v0.24.0-linux32.tar.gz
-		rm geckodriver-v0.24.0-linux32.tar.gz 
+		wget https://github.com/mozilla/geckodriver/releases/download/v0.26.0/geckodriver-v0.26.0-linux32.tar.gz
+		tar -xvf geckodriver-v0.26.0-linux32.tar.gz
+		rm geckodriver-v0.26.0-linux32.tar.gz 
 		chmod +x geckodriver 
 		mv geckodriver /usr/sbin 
 		sudo ln -s /usr/sbin/geckodriver /usr/bin/geckodriver
