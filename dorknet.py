@@ -61,12 +61,12 @@ if args.list:
 			for line in ins:
 				dork_list.append(line)
 				
-				if args.verbose == True:
+				if args.verbose:
 					print "[" + t.magenta("~") + "]" + line 
 				
 	except IOError as e:
 		print "\n[" + t.red("!") + "]Could not read dork list"
-		if args.verbose == True:
+		if args.verbose:
 			print "\nAn IO Error was raised with the following error message: "
 			print "\n %s" % (e)
             
@@ -108,13 +108,13 @@ def proxy(PROXY_HOST,PROXY_PORT):
 def search():
 	link_list = []
 	
-	if set_proxy == True:
+	if set_proxy:
 		# the --nogui option doesn't seem to want to play nice with
 		# The way in which i configure the proxy, if the user chose
 		# to employ one
 		driver = proxy(IP, PORT)
-	#elif args.nogui == True:
-	#	driver = webdriver.Firefox(firefox_options=options)
+	    # elif args.nogui == True:
+	    # driver = webdriver.Firefox(firefox_options=options)
 	else:
 		driver = webdriver.Firefox()
     
@@ -123,7 +123,7 @@ def search():
 			driver.get("http://google.com")
 		except Exception as e:
 			print "\n[" + t.red("!") + "]A connection could not be established"
-			if args.verbose == True:
+			if args.verbose:
 				print "An error was raised with the following error message: "
 				print "\n %s" % (e)
 				break
@@ -185,7 +185,7 @@ with open("results.log", "ab") as outfile:
 	
 	outfile.close()
 
-if args.verbose == True:	
+if args.verbose:	
 	with open("results.log", "r") as infile:
 		for line in infile:
 			print "[" + t.magenta("~") + "]" + line
